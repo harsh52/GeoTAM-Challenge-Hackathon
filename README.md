@@ -101,8 +101,9 @@ pipeline:
 
 ---
 
-##### TODO: Add more diagram and graph based on analysis of graph and qgis(prediction turnover category)
-##### TODO: Also add the graph of predicted_turnover vs voacategor and voasubcate
+![img.png](img.png)
+![img_1.png](img_1.png)
+
 ### **Key Results: Data-Driven Insights**
 
 - **Predicted Turnover Patterns**: Turnover predictions aligned with real-world trends. Businesses with higher rateable

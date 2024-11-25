@@ -210,8 +210,7 @@ def parallel(business_data_gdf_part, file_number):
         business_locations.loc[cluster_data.index, 'predicted_turnover'] = cluster_data['predicted_turnover']
 
     # Step 13: Save Results
-    output_gpkg_path = f"tests/parallel_code_test/try_2/business_data_advanced_ml{file_number}.shp"
-    # / Users / harshkumar / Documents / Personal / challenge / parallel_ml
+    output_gpkg_path = f"business_data_advanced_ml{file_number}.shp"
     business_locations.to_file(output_gpkg_path)
     print(f"Results saved to {output_gpkg_path}.")
 

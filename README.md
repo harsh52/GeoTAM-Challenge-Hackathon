@@ -1,3 +1,17 @@
+### **Predicting Business Turnover Using Geospatial and Business Data**
+
+### **Contents**
+
+1. [Introduction: The Problem We Solved](#introduction-the-problem-we-solved)
+2. [Storytelling: A Journey into Predicting Economic Potential](#storytelling-a-journey-into-predicting-economic-potential)
+3. [Our Approach: From Data to Predictions](#our-approach-from-data-to-predictions)
+4. [Key Results: Data-Driven Insights](#key-results-data-driven-insights)
+5. [Challenges and How We Overcame Them](#challenges-and-how-we-overcame-them)
+6. [How to Run the Code](#how-to-run-the-code)
+7. [Future Plans](#future-plans)
+8. [Conclusion: Unlocking Business Potential](#conclusion-unlocking-business-potential)
+9. [Team Members](#team-members)
+
 ### **Introduction: The Problem We Solved**
 
 Business turnover prediction is crucial for informed decision-making by stakeholders like entrepreneurs, investors, and
@@ -33,13 +47,15 @@ pipeline:
 
 2. **Feature Engineering**:  
    We identified the following critical features for turnover prediction:
-    - **`poi_density`**: Density of nearby points of interest (POIs), calculated using an optimized spatial index.
+    - **`poi_density`**: Density of nearby points of interest (POIs), calculated using an optimized spatial index within
+      the certain radius (in our code we have taken: 1 KM buffer)
     - **`rateable_value`**: The annual VOA rental valuation for businesses.
-    - **`competitor_count`**: Number of competitors in a defined radius, penalized non-linearly.
+    - **`competitor_count`**: Number of competitors in a defined radius, penalized non-linearly within
+      the certain radius (in our code we have taken: 1 KM buffer)
     - **`Foot_Traffic_Index`**: A normalized index derived from POI density to represent potential foot traffic.
     - **`nearest_station_distance`**: Distance to the nearest public transit station, incorporated with an exponential
       decay.
-    - **`parking_available`**: Binary indicator of nearby parking availability.
+    - **`parking_available`**: Binary indicator of nearby parking availability within radius r.
     - **`laratespaid`**: Rates paid annually by businesses, used as a proxy for financial capacity.
     - **`final_multiplier`**: Combines weighted multipliers for both business categories (`voacategory`) and
       subcategories (`voasubcategory`) to better reflect turnover variability.
@@ -85,14 +101,15 @@ pipeline:
 
 ---
 
+##### TODO: Add more diagram and graph based on analysis of graph and qgis(prediction turnover category)
+##### TODO: Also add the graph of predicted_turnover vs voacategor and voasubcate
 ### **Key Results: Data-Driven Insights**
 
 - **Predicted Turnover Patterns**: Turnover predictions aligned with real-world trends. Businesses with higher rateable
   values and category multipliers (e.g., retail and leisure) showed significantly higher turnover.
 - **Cluster-Based Insights**:
     - Cluster 2 (GMM): Represented businesses with the highest turnovers.
-    - Cluster 0 (DBSCAN): Highlighted outliers with unique characteristics, such as remote businesses or low POI
-      density.
+    - Cluster 0 (DBSCAN): Highlighted outliers with unique characteristics, such as businesses with medium turnover
 - **Feature Importances**: Rateable value was the most significant predictor, followed by competitor count, foot traffic
   index, and rates paid.
 
@@ -118,7 +135,7 @@ pipeline:
 
 1. **Install Required Libraries**:
    ```bash
-   pip install geopandas osmnx scikit-learn matplotlib seaborn pandas
+   pip install -r requirements.txt
    ```
 
 2. **Run the Pipeline**:
@@ -129,7 +146,7 @@ pipeline:
       ```
     - Execute the script:
       ```bash
-      python business_turnover_prediction.py
+      python parallel_business_data_with_predicted_turnover_clusters.py
       ```
 
 3. **Outputs**:

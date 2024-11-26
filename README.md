@@ -3,6 +3,7 @@
 ### **Contents**
 
 1. [Introduction: The Problem We Solved](#introduction-the-problem-we-solved)
+2. [Video: explanation of the approach](#video-explanation)
 2. [Storytelling: A Journey into Predicting Economic Potential](#storytelling-a-journey-into-predicting-economic-potential)
 3. [Our Approach: From Data to Predictions](#our-approach-from-data-to-predictions)
 4. [Key Results: Data-Driven Insights](#key-results-data-driven-insights)
@@ -23,6 +24,11 @@ challenge required us to extract insights from the OpenLocal dataset, optimize f
 algorithms to make predictions without explicit ground truth data for turnover.
 
 ---
+<a id="video-explanation"></a>
+
+## Video: explanation of the approach
+
+- Video link: https://drive.google.com/file/d/1oOSGmsdm_4MKX6qqR1XSeQaBx2PoM2d5/view?usp=sharing
 
 ### **Storytelling: A Journey into Predicting Economic Potential**
 
